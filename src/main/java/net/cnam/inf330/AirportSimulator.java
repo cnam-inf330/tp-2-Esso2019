@@ -1,5 +1,6 @@
 package net.cnam.inf330;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -15,8 +16,13 @@ public class AirportSimulator {
     private int tick;
     private int planeCount;
     // TODO 1.a) Declare a PriorityQueue to store the flying planes waiting to land
+
+    private PlaneFuelComparator PriorityQueue ;
+
     //private ... flyingPlanes;
     // TODO 1.b) Declare a Queue (LinkedList) to store the landed planes waiting to take off
+    private LinkedList Queue;
+
     //private ... landedPlanes;
 
     public AirportSimulator() {
@@ -121,11 +127,16 @@ public class AirportSimulator {
      * @param flying
      */
     // TODO 4. Throw an InvalidFuelCapacityException when fuelCapacity is negative
-    private void createPlane(int fuelCapacity, boolean flying) {
+
+    private void createPlane(int fuelCapacity, boolean flying) throws InvalidFuelCapacityException {
+
+
         String name = "Plane" + planeCount++;
         Plane plane = new Plane(this.tick, name, flying, fuelCapacity);
+        //////////////////////////
         System.out.println("Created plane : " + name + " (" + fuelCapacity + ", " +
                 (flying ? "air" : "ground") + ")");
+        ///////////////////////////////////////
         if (flying)
             flyingPlanes.add(plane);
         else
@@ -142,3 +153,10 @@ public class AirportSimulator {
         return this.flyingPlanes.isEmpty() && this.landedPlanes.isEmpty();
     }
 }
+
+
+
+
+    public static void main(String[] args){
+        A obj = new A(); //Erreur de compilation !
+    }
