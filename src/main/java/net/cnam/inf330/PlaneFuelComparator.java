@@ -2,7 +2,7 @@ package net.cnam.inf330;
 
 import java.util.Comparator;
 
-public class PlaneFuelComparator implements Comparator {
+public class PlaneFuelComparator implements Comparator { // FIXME Comparator<Plane>
 
     public void PlaneFuelComparator () {
         System.out.println("");

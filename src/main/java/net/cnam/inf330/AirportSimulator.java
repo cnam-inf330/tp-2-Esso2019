@@ -16,11 +16,12 @@ public class AirportSimulator implements Observer {
     private int tick;
     private int planeCount;
     // TODO 1.a) Declare a PriorityQueue to store the flying planes waiting to land
-
+    // FIXME The type should be PriorityQueue<Plane>; the comparator should be passed as parameter to the constructor
     private PlaneFuelComparator PriorityQueue ;
 
     //private ... flyingPlanes;
     // TODO 1.b) Declare a Queue (LinkedList) to store the landed planes waiting to take off
+    // FIXME The type should be Queue<Plane>
     private LinkedList Queue;
 
     //private ... landedPlanes;
@@ -28,7 +29,7 @@ public class AirportSimulator implements Observer {
     public AirportSimulator() {
         this.tick = 1;
         this.planeCount = 0;
-        //...
+        //... FIXME Initialize Plane Queues here
     }
 
     /**
@@ -129,7 +130,7 @@ public class AirportSimulator implements Observer {
     // TODO 4. Throw an InvalidFuelCapacityException when fuelCapacity is negative
 
     private void createPlane(int fuelCapacity, boolean flying) throws InvalidFuelCapacityException {
-
+        // FIXME Throw InvalidFuelCapacityException when fuelCapacity < 0
 
         String name = "Plane" + planeCount++;
         Plane plane = new Plane(this.tick, name, flying, fuelCapacity);

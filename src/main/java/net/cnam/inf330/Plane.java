@@ -6,6 +6,7 @@ package net.cnam.inf330;
 // TODO 3.a) Make Plane an abstract class that implements the IPlane interface
 // TODO 6.a) Make Plane an Observable object
 abstract class Plane implements IPlane, Observable {
+    // FIXME Override methods from IPlane interface
 
     public static final int MAX_FUEL_CAPACITY = 5;
 
